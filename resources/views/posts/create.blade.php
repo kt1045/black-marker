@@ -1,10 +1,7 @@
-<!DOCTYPE HTML>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>Blog</title>
-    </head>
-    <body>
+<x-app-layout>
+     <x-slot name="header">
+         Blog
+          </x-slot>
         <h1>Blog Name</h1>
         <form action="/posts" method="POST">
             @csrf
@@ -19,9 +16,7 @@
             <div class="category">
     <h2>Category</h2>
     <select name="post[category_id]">
-        @foreach($categories as $category)
-            <option value="{{ $category->id }}">{{ $category->name }}</option>
-        @endforeach
+       
     </select>
 </div>
             <input type="submit" value="store"/>
@@ -29,5 +24,4 @@
         <div class="footer">
             <a href="/">戻る</a>
         </div>
-    </body>
-</html>
+  </x-app-layout> 
